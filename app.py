@@ -1,5 +1,7 @@
 # -*- coding UTF-8 -*-
 
+import re
+
 def cadastrar(nomes):
     nome = input("Digite o seu nome: ")
     nomes.append(nome)
@@ -37,11 +39,18 @@ def procurar(nomes):
     else:
         print("Nome NÃO existente!")
 
+def procurar_regex(nomes):
+    print("Digite a expressão regular: ")
+    regex = input()
+    nomes_concatenados = ''.join(nomes)
+    resultados = re.findall(regex, nomes_concatenados)
+    print(resultados)
+
 def menu():
     escolha = ""
     nomes = []
     while (escolha != "0"):
-        print("Digite a sua escolha: 1-Cadastrar / 2-Listar / 3-Remover / 4-Alterar / 5-Procurar / 0-Sair")
+        print("Digite a sua escolha: 1-Cadastrar / 2-Listar / 3-Remover / 4-Alterar / 5-Procurar / 6-Procurar Regex 0-Sair")
         escolha = input()
 
         if (escolha == "1"):
@@ -58,6 +67,9 @@ def menu():
         
         if (escolha == "5"):
             procurar(nomes)
+
+        if (escolha == "6"):
+            procurar_regex(nomes)
 
     print("Goodbye, and thanks for all the fish.")
 
