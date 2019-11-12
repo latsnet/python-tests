@@ -17,10 +17,6 @@ def calcula_idade():
     ano_como_int = int(ano_como_string)
     print("Sua idade é %s anos " % (2019 - ano_como_int))
 
-def cadastrar(nomes):
-    nome = input("Digite o seu nome: ")
-    nomes.append(nome)
-
 def remover(nomes):
     print("Qual nome você gostaria de remover?")
     nome = input()
